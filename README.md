@@ -41,7 +41,7 @@
       
       }
       render() {
-        return <div onClick={handleClick} />;
+        return <div onClick={handleClick} />
       }
     }
     
@@ -64,29 +64,29 @@
 
     ```javascript
     // bad
-    import reservationCard from './ReservationCard';
+    import reservationCard from './ReservationCard'
 
     // good
-    import ReservationCard from './ReservationCard';
+    import ReservationCard from './ReservationCard'
 
     // bad
-    const ReservationItem = <ReservationCard />;
+    const ReservationItem = <ReservationCard />
 
     // good
-    const reservationItem = <ReservationCard />;
+    const reservationItem = <ReservationCard />
     ```
 
   - **Component Naming**: Use the filename as the component name. For example, `ReservationCard.jsx` should have a reference name of `ReservationCard`. However, for root components of a directory, use `index.jsx` as the filename and use the directory name as the component name:
 
     ```javascript
     // bad
-    import Footer from './Footer/Footer';
+    import Footer from './Footer/Footer'
 
     // bad
-    import Footer from './Footer/index';
+    import Footer from './Footer/index'
 
     // good
-    import Footer from './Footer';
+    import Footer from './Footer'
     ```
 
 ## Declaration
@@ -98,7 +98,7 @@
     export default React.createClass({
       displayName: 'ReservationCard',
       // stuff goes here
-    });
+    })
 
     // good
     export default class ReservationCard extends React.Component {
@@ -221,7 +221,7 @@
     render() {
       return <MyComponent className="long body" foo="bar">
                <MyChild />
-             </MyComponent>;
+             </MyComponent>
     }
 
     // good
@@ -230,13 +230,13 @@
         <MyComponent className="long body" foo="bar">
           <MyChild />
         </MyComponent>
-      );
+      )
     }
 
     // good, when single line
     render() {
-      const body = <div>hello</div>;
-      return <MyComponent>{body}</MyComponent>;
+      const body = <div>hello</div>
+      return <MyComponent>{body}</MyComponent>
     }
     ```
 
@@ -294,9 +294,9 @@
     // good
     class extends React.Component {
       constructor(props) {
-        super(props);
+        super(props)
 
-        this.onClickDiv = this.onClickDiv.bind(this);
+        this.onClickDiv = this.onClickDiv.bind(this)
       }
 
       onClickDiv() {
@@ -319,7 +319,7 @@
       },
 
       // other stuff
-    });
+    })
 
     // good
     class extends React.Component {
@@ -353,21 +353,21 @@
   - How to define `propTypes`, `defaultProps`, `contextTypes`, etc...
 
     ```javascript
-    import React, { PropTypes } from 'react';
+    import React, { PropTypes } from 'react'
 
     const propTypes = {
       id: PropTypes.number.isRequired,
       url: PropTypes.string.isRequired,
       text: PropTypes.string,
-    };
+    }
 
     const defaultProps = {
       text: 'Hello World',
-    };
+    }
 
     class Link extends React.Component {
       static methodsAreOk() {
-        return true;
+        return true
       }
 
       render() {
@@ -375,10 +375,10 @@
       }
     }
 
-    Link.propTypes = propTypes;
-    Link.defaultProps = defaultProps;
+    Link.propTypes = propTypes
+    Link.defaultProps = defaultProps
 
-    export default Link;
+    export default Link
     ```
 
   eslint rules: [`react/sort-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md).
